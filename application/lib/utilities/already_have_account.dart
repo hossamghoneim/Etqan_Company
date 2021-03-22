@@ -17,7 +17,9 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
       children: <Widget>[
         Text(
           login ? "ليس لديك حساب ؟" : "هل لديك حساب ؟",
-          style: TextStyle(color: kPrimaryColor),
+          style: TextStyle(
+              color: kPrimaryColor,
+              fontSize: MediaQuery.of(context).size.height * 0.025),
         ),
         GestureDetector(
           onTap: press,
@@ -26,6 +28,7 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
             style: TextStyle(
               color: kPrimaryColor,
               fontWeight: FontWeight.bold,
+              fontSize: MediaQuery.of(context).size.height * 0.025,
             ),
           ),
         )

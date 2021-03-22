@@ -1,22 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:etqan_company/utilities/constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:etqan_company/utilities/background.dart';
-import 'package:etqan_company/widgets/text_field_container.dart';
 import 'package:etqan_company/widgets/rounded_field.dart';
 import 'package:etqan_company/widgets/rounded_button_login.dart';
+import 'package:etqan_company/widgets/text_field_container.dart';
 import 'package:etqan_company/utilities/already_have_account.dart';
-import 'sign_up_screen.dart';
+import 'package:etqan_company/screens/login_screen.dart';
 
 bool _obscureText = true;
 
-class LoginScreen extends StatefulWidget {
+class SignUp extends StatefulWidget {
   final String type;
-  LoginScreen({@required this.type});
+  SignUp({@required this.type});
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpState extends State<SignUp> {
+  setpref(String s1) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    setState(() {
+      preferences.setString("Qualification", s1);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -27,45 +35,42 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Center(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "تسجيل الدخول",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize:
-                                  MediaQuery.of(context).size.height * 0.03,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.24,
-                      ),
-                      IconButton(
-                          icon: Icon(Icons.arrow_back),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          }),
-                    ],
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.07),
+                  Text(
+                    "إنشاء حساب",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: MediaQuery.of(context).size.height * 0.027,
+                    ),
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                   Image.asset(
                     "assets/${widget.type}-icon.png",
-                    height: MediaQuery.of(context).size.height * 0.30,
-                    width: MediaQuery.of(context).size.width * 0.45,
+                    height: MediaQuery.of(context).size.height * 0.15,
+                    width: MediaQuery.of(context).size.width * 0.40,
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                   RoundedField(
                     txt: "اسم المستخدم",
                     iconitem: Icon(
                       Icons.person,
                       color: kPrimaryColor,
                     ),
+                    onChanged: (value) {},
+                  ),
+                  RoundedField(
+                    txt: "اسم ولي الامر الرباعي",
+                    iconitem: Icon(
+                      Icons.person_pin,
+                      color: kPrimaryColor,
+                    ),
+                    onChanged: (value) {},
+                  ),
+                  RoundedField(
+                    txt: "رقم الهاتف",
+                    iconitem: Icon(
+                      Icons.mobile_friendly,
+                      color: kPrimaryColor,
+                    ),
+                    onChanged: (value) {},
                   ),
                   TextFieldContainer(
                       child: TextField(
@@ -90,17 +95,18 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   )),
                   RoundedButtonLogin(
-                    text: "تسجيل الدخول",
+                    text: "إنشاء حساب",
                     press: () {},
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.015),
                   AlreadyHaveAnAccountCheck(
+                    login: false,
                     press: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return SignUp(
+                            return LoginScreen(
                               type: widget.type,
                             );
                           },

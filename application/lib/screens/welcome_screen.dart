@@ -32,7 +32,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     SizedBox(width: MediaQuery.of(context).size.width * 0.1),
                     Container(
                         width: MediaQuery.of(context).size.width * 0.5,
-                        height: MediaQuery.of(context).size.height * 0.28,
+                        height: MediaQuery.of(context).size.height * 0.27,
                         decoration: new BoxDecoration(
                             shape: BoxShape.circle,
                             image: new DecorationImage(
@@ -46,7 +46,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       right: MediaQuery.of(context).size.width * 0.35,
                     ),
                     child: Container(
-                        width: MediaQuery.of(context).size.width * 0.7,
+                        width: MediaQuery.of(context).size.width * 0.65,
                         height: MediaQuery.of(context).size.height * 0.28,
                         decoration: new BoxDecoration(
                             shape: BoxShape.circle,
