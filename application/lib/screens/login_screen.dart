@@ -6,6 +6,7 @@ import 'package:etqan_company/widgets/rounded_field.dart';
 import 'package:etqan_company/widgets/rounded_button_login.dart';
 import 'package:etqan_company/utilities/already_have_account.dart';
 import 'sign_up_screen.dart';
+import 'basic_screen.dart';
 
 bool _obscureText = true;
 
@@ -47,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         width: MediaQuery.of(context).size.width * 0.24,
                       ),
                       IconButton(
-                          icon: Icon(Icons.arrow_back),
+                          icon: Icon(Icons.arrow_forward),
                           onPressed: () {
                             Navigator.pop(context);
                           }),
@@ -91,7 +92,18 @@ class _LoginScreenState extends State<LoginScreen> {
                   )),
                   RoundedButtonLogin(
                     text: "تسجيل الدخول",
-                    press: () {},
+                    press: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return BasicScreen(
+                              type: widget.type,
+                            );
+                          },
+                        ),
+                      );
+                    },
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.03),
                   AlreadyHaveAnAccountCheck(
