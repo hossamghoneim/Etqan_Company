@@ -80,7 +80,7 @@ class _SignUpState extends State<SignUp> {
                   RoundedField(
                     txt: "رقم الهاتف",
                     iconitem: Icon(
-                      Icons.mobile_friendly,
+                      Icons.mobile_screen_share,
                       color: kPrimaryColor,
                     ),
                     onChanged: (value) {},

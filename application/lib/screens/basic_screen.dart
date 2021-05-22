@@ -71,7 +71,7 @@ class _BasicScreenState extends State<BasicScreen> {
     [
       TabItem(icon: Icons.people, title: 'Profile'),
       TabItem(icon: Icons.home, title: 'Home'),
-      TabItem(icon: Icons.home_work_outlined, title: 'Homework'),
+      TabItem(icon: Icons.work, title: 'Homework'),
       TabItem(icon: Icons.message, title: 'Message'),
     ],
     //Navbar of Manager
