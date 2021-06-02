@@ -2,6 +2,7 @@ import 'package:etqan_company/screens/ads_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:etqan_company/widgets/Ads.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -12,12 +13,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text(
-          "Home Page",
-        ),
-      ),
       body: Column(
         children: [
           SizedBox(
@@ -81,6 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
+          Expanded(child: Ads(length: 2)),
         ],
       ),
     );

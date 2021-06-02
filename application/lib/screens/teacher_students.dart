@@ -17,7 +17,7 @@ class _TeacherStudentsState extends State<TeacherStudents> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             StudentsScreenWidget(
-              iconData: Icons.star_rate_rounded,
+              iconData: Icons.star,
               title: 'الدرجات',
               color: Colors.orangeAccent,
               onPress: () {
@@ -25,14 +25,14 @@ class _TeacherStudentsState extends State<TeacherStudents> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ListOfStudents(
-                      origin_name: 'Degrees',
+                      originName: 'Degrees',
                     ),
                   ),
                 );
               },
             ),
             StudentsScreenWidget(
-              iconData: Icons.home_work_rounded,
+              iconData: Icons.work,
               title: 'الواجبات',
               color: Colors.orangeAccent,
               onPress: () {
@@ -40,7 +40,7 @@ class _TeacherStudentsState extends State<TeacherStudents> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => ListOfStudents(
-                      origin_name: 'Home Work',
+                      originName: 'Home Work',
                     ),
                   ),
                 );
@@ -49,7 +49,7 @@ class _TeacherStudentsState extends State<TeacherStudents> {
           ],
         ),
         StudentsScreenWidget(
-          iconData: Icons.group_rounded,
+          iconData: Icons.group,
           title: 'جميع الطلاب',
           color: Colors.orangeAccent,
           onPress: () {
@@ -57,7 +57,7 @@ class _TeacherStudentsState extends State<TeacherStudents> {
               context,
               MaterialPageRoute(
                 builder: (context) => ListOfStudents(
-                  origin_name: 'Students',
+                  originName: 'Students',
                 ),
               ),
             );
