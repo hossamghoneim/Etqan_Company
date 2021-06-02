@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ListOfStudents extends StatelessWidget {
-  String origin_name;
-  ListOfStudents({this.origin_name});
+  String originName;
+  ListOfStudents({this.originName});
   @override
   Widget build(BuildContext context) {
-    int Length = 7;
+    int length = 7;
     return Scaffold(
       appBar: AppBar(
         title: Text('List Of Students'),
@@ -21,7 +21,7 @@ class ListOfStudents extends StatelessWidget {
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 scrollDirection: Axis.vertical,
-                itemCount: Length,
+                itemCount: length,
                 itemBuilder: (context, index) {
                   return Container(
                     margin: EdgeInsets.all(15),
@@ -47,28 +47,28 @@ class ListOfStudents extends StatelessWidget {
                       ),
                       leading: FadeInImage.assetNetwork(
                         width: 80,
-                        image: origin_name == 'Degrees' ||
-                                origin_name == 'Students'
-                            ? 'assets/student-icon.png'
-                            : 'assets/teaching-icon.png',
-                        placeholder: origin_name == 'Degrees' ||
-                                origin_name == 'Students'
-                            ? 'assets/student-icon.png'
-                            : 'assets/teaching-icon.png',
+                        image:
+                            originName == 'Degrees' || originName == 'Students'
+                                ? 'assets/student-icon.png'
+                                : 'assets/teaching-icon.png',
+                        placeholder:
+                            originName == 'Degrees' || originName == 'Students'
+                                ? 'assets/student-icon.png'
+                                : 'assets/teaching-icon.png',
                         fit: BoxFit.fill,
                       ),
                       title: Text(
-                          origin_name == 'Degrees' || origin_name == 'Students'
+                          originName == 'Degrees' || originName == 'Students'
                               ? "Student Name"
                               : "Assignment title"),
                       subtitle: Text(
-                          origin_name == 'Degrees' || origin_name == 'Students'
+                          originName == 'Degrees' || originName == 'Students'
                               ? 'Class name'
                               : "Subject Name"),
-                      trailing: origin_name == 'Students'
-                          ? Icon(Icons.home_work)
+                      trailing: originName == 'Students'
+                          ? Icon(Icons.work)
                           : Text(
-                              origin_name == 'Degrees' ? 'تقييم' : 'تعديل',
+                              originName == 'Degrees' ? 'تقييم' : 'تعديل',
                               style: TextStyle(
                                 color: Colors.blueAccent,
                                 fontSize: 20,
