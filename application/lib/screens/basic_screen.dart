@@ -1,11 +1,12 @@
+import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:etqan_company/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+
 import 'chat.dart';
-import 'teacher_students.dart';
-import 'profile.dart';
 import 'degrees.dart';
 import 'homework.dart';
+import 'profile.dart';
+import 'teacher_students.dart';
 import 'types_management.dart';
 
 class BasicScreen extends StatefulWidget {
@@ -90,7 +91,7 @@ class _BasicScreenState extends State<BasicScreen> {
     ],
   ];
 
-  int _currentIndex = 0;
+  int _currentIndex = 1;
   @override
   void initState() {
     ChooseType();
@@ -101,6 +102,11 @@ class _BasicScreenState extends State<BasicScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: Text('Etqan Company'),
+          centerTitle: true,
+        ),
         body: _modules[_current_Navbar][_currentIndex],
         bottomNavigationBar: ConvexAppBar.badge(
           {3: '15'},

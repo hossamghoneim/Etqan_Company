@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'screens/lis_of_students.dart';
 import 'screens/splash_screen.dart';
 import 'screens/welcome_screen.dart';
 
@@ -13,11 +15,11 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
         ),
-        home: SplashScreenPage(),
+        initialRoute: '/',
         routes: {
-          'WelcomeScreen': (context) {
-            return WelcomeScreen();
-          },
+          '/': (context) => SplashScreenPage(),
+          '/welcome_screen': (context) => WelcomeScreen(),
+          '/list_of_students': (context) => ListOfStudents(),
         });
   }
 }
