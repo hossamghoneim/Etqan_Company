@@ -1,7 +1,6 @@
+import 'package:etqan_company/widgets/Ads.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:etqan_company/widgets/Ads.dart';
 
 class AdsScreen extends StatelessWidget {
   @override
@@ -14,7 +13,10 @@ class AdsScreen extends StatelessWidget {
           "Ads Page",
         ),
       ),
-      body: Ads(length: length),
+      body: Ads(
+        length: length,
+        scroll: true,
+      ),
     );
   }
 }
