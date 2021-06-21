@@ -9,13 +9,14 @@ class AdsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
+        centerTitle: true,
         title: Text(
           "Ads Page",
         ),
       ),
       body: Ads(
         length: length,
-        scroll: true,
+        scroll: false,
       ),
     );
   }

@@ -56,8 +56,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => AdsScreen()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AdsScreen(),
+                  ),
+                );
               },
               child: Container(
                 width: MediaQuery.of(context).copyWith().size.width / 1.2,
